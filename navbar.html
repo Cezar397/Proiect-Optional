@@ -1,0 +1,21 @@
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<?php 
+				if(isset($_SESSION["ID"]) && !empty($_SESSION["ID"]))
+				{
+					$id = $_SESSION["ID"];
+					echo '<li class="nav-item"><a class="nav-link" href="index.php">Chat</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" style="color: gold;" href="#">Private Chat</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" href="account.php?id='.$id.'">Account</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
+				}	
+				else
+				{
+					echo '<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>';
+				}
+			?>
+			
+		</ul>
+</nav>
